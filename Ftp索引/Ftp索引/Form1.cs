@@ -205,17 +205,17 @@ namespace Ftp索引
                 {
                     // 根据状态码判断具体网络异常类型，更加精确地提示用户
                     _ = Task.Run(() => MessageBox.Show($"发生网络异常：{ex.Message}", "错误QWQ"));
-                    fileList.Add($"ERROR：发生网络异常：{ex}");
+                    fileList.Add($"ERROR：发生网络异常：{ex.Message}");
                 }
                 catch (ArgumentException ex)
                 {
                     _ = Task.Run(() => MessageBox.Show($"发生编码异常：{ex.Message}", "错误QWQ"));
-                    fileList.Add($"ERROR：发生编码异常：{ex}");
+                    fileList.Add($"ERROR：发生编码异常：{ex.Message}");
                 }
                 catch (Exception ex) // 其他异常
                 {
                     _ = Task.Run(() => MessageBox.Show($"发生未知异常：{ex.Message}", "错误QWQ"));
-                    fileList.Add($"ERROR：发生未知异常：{ex}");
+                    fileList.Add($"ERROR：发生未知异常：{ex.Message}");
                 }
             }
             return fileList;
